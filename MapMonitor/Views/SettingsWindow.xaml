@@ -1,0 +1,58 @@
+﻿<Window
+    x:Class="MapMonitor.Views.SettingsWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:MapMonitor.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:tools="clr-namespace:MapMonitor.Tools"
+    xmlns:vms="clr-namespace:MapMonitor.ViewModels"
+    Title="Настройки подключения"
+    Width="350"
+    Height="280"
+    tools:DialogCloser.DialogResult="{Binding DialogResult}"
+    ResizeMode="NoResize"
+    ShowInTaskbar="False"
+    Topmost="True"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <Grid>
+        <StackPanel
+            Width="300"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Orientation="Vertical">
+            <Label Target="{Binding ServerEdit}">Server</Label>
+            <TextBox
+                x:Name="ServerEdit"
+                Margin="5"
+                Text="{Binding Server}" />
+            <Label Target="{Binding LoginEdit}">Login</Label>
+            <TextBox
+                x:Name="LoginEdit"
+                Margin="5"
+                Text="{Binding Login}" />
+            <Label Target="{Binding PwdEdit}">Password</Label>
+            <PasswordBox x:Name="PwdEdit" Margin="5" />
+            <StackPanel
+                Margin="0,30,0,0"
+                HorizontalAlignment="Right"
+                Orientation="Horizontal">
+                <Button
+                    Width="70"
+                    Height="25"
+                    Margin="5"
+                    Command="{Binding Path=(vms:SettingsVm.SaveCommand)}"
+                    CommandParameter="{Binding ElementName=PwdEdit}"
+                    Content="Сохранить"
+                    IsDefault="True" />
+                <Button
+                    Width="70"
+                    Height="25"
+                    Margin="5"
+                    Content="Отмена"
+                    IsCancel="True" />
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
