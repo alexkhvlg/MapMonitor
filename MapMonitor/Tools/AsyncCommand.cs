@@ -3,8 +3,7 @@ using System.ServiceModel.Dispatcher;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-
-namespace MapMonitor.Logic
+namespace MapMonitor.Tools
 {
 public class AsyncCommand : IAsyncCommand
     {

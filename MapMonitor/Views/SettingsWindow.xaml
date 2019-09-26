@@ -9,7 +9,7 @@
     xmlns:vms="clr-namespace:MapMonitor.ViewModels"
     Title="Настройки подключения"
     Width="350"
-    Height="280"
+    Height="330"
     tools:DialogCloser.DialogResult="{Binding DialogResult}"
     ResizeMode="NoResize"
     ShowInTaskbar="False"
@@ -22,20 +22,25 @@
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
             Orientation="Vertical">
-            <Label Target="{Binding ServerEdit}">Server</Label>
+            <Label Content="Server" Target="{Binding ServerEdit}" />
             <TextBox
                 x:Name="ServerEdit"
                 Margin="5"
                 Text="{Binding Server}" />
-            <Label Target="{Binding LoginEdit}">Login</Label>
+            <Label Content="Login" Target="{Binding LoginEdit}" />
             <TextBox
                 x:Name="LoginEdit"
                 Margin="5"
                 Text="{Binding Login}" />
-            <Label Target="{Binding PwdEdit}">Password</Label>
+            <Label Content="Database" Target="{Binding DatabaseEdit}" />
+            <TextBox
+                x:Name="DatabaseEdit"
+                Margin="5"
+                Text="{Binding Database}" />
+            <Label Content="Password" Target="{Binding PwdEdit}" />
             <PasswordBox x:Name="PwdEdit" Margin="5" />
             <StackPanel
-                Margin="0,30,0,0"
+                Margin="0,20,0,0"
                 HorizontalAlignment="Right"
                 Orientation="Horizontal">
                 <Button

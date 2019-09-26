@@ -17,7 +17,8 @@ namespace MapMonitor.Tools
                 {
                     Server = key.GetValue("Server", null)?.ToString(),
                     Login = key.GetValue("Login", null)?.ToString(),
-                    Password = key.GetValue("Password", null)?.ToString()
+                    Password = key.GetValue("Password", null)?.ToString(),
+                    Database = key.GetValue("Database", null)?.ToString()
                 };
                 key.Close();
                 return sqlConfig;
@@ -38,6 +39,7 @@ namespace MapMonitor.Tools
                     key.SetValue("Server", sqlConfig.Server);
                     key.SetValue("Login", sqlConfig.Login);
                     key.SetValue("Password", sqlConfig.Password);
+                    key.SetValue("Database", sqlConfig.Database);
                     key.Close();
                 }
             }

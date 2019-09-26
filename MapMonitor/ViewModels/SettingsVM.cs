@@ -1,11 +1,9 @@
 ﻿using System.ComponentModel;
-using System.ComponentModel.Design;
 using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
 using System.Windows.Controls;
 using MapMonitor.Annotations;
-using MapMonitor.Logic;
 using MapMonitor.Models;
+using MapMonitor.Tools;
 
 namespace MapMonitor.ViewModels
 {
@@ -15,6 +13,8 @@ namespace MapMonitor.ViewModels
         private string _login;
         private string _password;
         private RelayCommand _saveCommand;
+        private bool? _dialogResult;
+        private string _database;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -57,13 +57,21 @@ namespace MapMonitor.ViewModels
             }
         }
 
+        public string Database
+        {
+            get => _database;
+            set
+            {
+                _database = value;
+                OnPropertyChanged(nameof(Database));
+            }
+        }
+
         public RelayCommand SaveCommand => _saveCommand ?? (_saveCommand = new RelayCommand(obj=>
         {
             _password = ((PasswordBox) obj).Password;
             DialogResult = true;
         }));
-
-        private bool? _dialogResult;
 
         public bool? DialogResult
         {
@@ -88,6 +96,7 @@ namespace MapMonitor.ViewModels
                 Server = sqlConfig.Server;
                 Login = sqlConfig.Login;
                 Password = sqlConfig.Password;
+                Database = sqlConfig.Database;
             }
         }
         public SqlConfig SqlConfig
@@ -98,7 +107,8 @@ namespace MapMonitor.ViewModels
                 {
                     Server = Server,
                     Login = Login,
-                    Password = Password
+                    Password = Password,
+                    Database = Database
                 };
                 return config;
             }

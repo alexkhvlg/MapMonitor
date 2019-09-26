@@ -8,8 +8,6 @@
     Title="Map Monitor"
     Width="800"
     Height="450"
-    Closing="MainWindow_OnClosing"
-    Loaded="MainWindow_OnLoaded"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
     <Grid />

@@ -42,7 +42,7 @@ namespace MapMonitor.Annotations
   /// 
   /// void UseTest() {
   ///   var p = Test();
-  ///   var s = p.ToString(); // Warning: Possible 'System.NullReferenceException'
+  ///   var s = p.ToConnectionString(); // Warning: Possible 'System.NullReferenceException'
   /// }
   /// </code></example>
   [AttributeUsage(
@@ -607,7 +607,7 @@ namespace MapMonitor.Annotations
   /// <code>
   /// [SourceTemplate]
   /// public static void something(this Entity x, [Macro(Expression = "guid()", Editable = -1)] string newguid) {
-  ///   /*$ var $x$Id = "$newguid$" + x.ToString();
+  ///   /*$ var $x$Id = "$newguid$" + x.ToConnectionString();
   ///   x.DoSomething($x$Id); */
   /// }
   /// </code>

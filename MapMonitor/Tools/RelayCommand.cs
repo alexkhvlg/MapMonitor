@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace MapMonitor.Logic
+namespace MapMonitor.Tools
 {
     public class RelayCommand : ICommand
     {

@@ -2,7 +2,7 @@
 using System.ServiceModel.Dispatcher;
 using System.Threading.Tasks;
 
-namespace MapMonitor.Logic
+namespace MapMonitor.Tools
 {
     public static class TaskUtilities
     {

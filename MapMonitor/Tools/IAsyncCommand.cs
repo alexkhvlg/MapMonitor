@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace MapMonitor.Logic
+namespace MapMonitor.Tools
 {
     public interface IAsyncCommand : ICommand
     {
